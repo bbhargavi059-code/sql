@@ -1,0 +1,65 @@
+show databases;  -- displays all databases available in MYSQL
+-- how to create a database
+create  database emp;  -- creates a new data base named dm
+-- how to delete the database
+drop database emp;  -- perminatly deletes "DM".
+
+-- how to create  a Table
+-- student ID(varchar), student Name(varchar), student Marks(Decimal,Int)
+create table  student( -- cates a table named "STUDENT"
+student_ID varchar(30),
+student_Name varchar(40),
+student_Marks int);
+select * from student; -- shows all rows and column in the "STUDENT TABLE"
+-- How to delete the Table
+drop Table student;
+create table Employee(
+emp_id varchar(40),
+emp_name varchar (50),
+emp_salary  varchar (30));
+ select *from  Employee;
+ insert into employee(emp_id,emp_name,emp_salary)values('3','bhavi',30000);
+
+create table student37(
+std_name varchar(30),
+std_id varchar(50),
+std_marks int);
+
+create table members(
+id  INT PRIMARY KEY,
+name varchar(100),
+plan varchar(50));
+select*from members;
+ 
+ 
+-- ==========================================================================================
+
+create database Emp;
+delete from student;
+use Emp;
+-- how many database is there how to check table
+show databases;
+-- how  to cteat a db 
+create database school;
+-- how to delete the db
+drop database school;
+
+-- how to utilize the db
+use school;
+
+--  NOT NULL
+-- create one table 
+-- the table name is course
+-- c_id int
+-- c_name varchar(30)
+create table course78(
+c_id int not null,
+c_name varchar(30));
+insert into course78(c_id, c_name) values(0,'ak'); -- RUN
+select*from course78;
+--  =================================================================================================================
+create table course(
+c_id int not null, -- every must havae be c_id and c_name
+c_name varchar(30));
+insert into course value(0,'ak'); -- (RUN)
+select*from course;
