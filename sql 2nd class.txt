@@ -1,0 +1,82 @@
+-- UNIQUE      -- (duplicate values not allowed.)
+create table course728(
+c_id int unique, -- (every must havae be c_id and c_name)
+c_name varchar(30));
+insert into course728(c_id, c_name) value(0,'ak'),
+(1,'aks');
+select*from course728;
+
+create table student2(
+stu_id int not null,
+stu_name varchar(30),
+stu_marks varchar(40));
+insert into student2(stu_id,stu_name,stu_marks) values(517, 'bhargavi',590),(516,'bharathi', 580),(536, 'manasa',600);
+select*from student2;
+-- ===================================================================================================================
+-- PRIMARY KEY  -- (unique and not null both rules together)
+-- unique +not null (primary key does not allow duplicate IDs)
+create table course788(
+c_id int primary key,
+c_name varchar(30));
+insert into course788(c_id,c_name) value(5,'ak'),
+(3,'aks');
+select*from course788; 
+-- ===================================================================================
+use dm;
+create table course7891(
+c_id int primary key,
+score int check (score>=60), -- (score must be 60 or greter)
+c_name varchar(30));
+insert into course7891(c_id,score,c_name) value(4,60,'ak');
+select*from course7891; 
+-- =========================================================
+
+create table course78911(
+c_id int primary key,
+score int check(score>=60),
+c_name varchar(30));
+insert into course78911(c_id,score,c_name) values(5,60,'ak'),(8,78,'ak');
+select*from course78911;
+-- ================================================================
+-- AUTO INCREMENT+PRIMARY KEY+CHECK
+create table course78912(
+c_id int primary key auto_increment, -- (auto_increment automatically gererates numbers)
+score int check(score>=60),  -- (score must be 60 or more =valid 60 70 80 ,invalid=40,30,55)
+c_name varchar(30));
+insert into course78912(score,c_name) values(60,'ak'),
+(78,'ad');
+select*from course78912;
+-- =======================================================================================
+
+create table course7121(
+c_id int primary key auto_increment,
+score int check(score>=60),
+c_name varchar(30))
+auto_increment=5;
+insert into course7121(score,c_name) values(60,'ak'),
+(78,'ad');
+select*from course7121;
+-- ========================================================================================
+
+create table ticket67(
+t_id int primary key auto_increment, -- INT whole numbers,PRIMAR KEY unique value for each row, AUTO _INCREMENT automatically generates numbers
+t_name varchar(30),
+p_age int default 60, -- column (field) name -- if no value provided ,at a time 60 will be stored automatically
+booking_time datetime default current_timestamp);
+insert into ticket67(t_name) values('mk'),
+('ak'),
+('ak');
+select*from ticket67;
+-- =======================================================================================================================
+ create table students( --  create a new table students
+ std_id int primary key, -- column name (student ID) stores numbers only,ech student ID must be unique(no duplicates)
+ std_name varchar(50) not null, --  text with minimum 50 characters, name cannot be empty
+ std_city varchar(30) default 'delhi',
+ std_age int check(std_age>=18));
+ insert into students(std_id,std_name,std_city,std_age)
+ values (517,'sree','rayachoti',22),
+        (516,'bharu','rayachoti',22),
+        (536,'manu','kalluru',21),
+        (545,'chitti','madanpalli',19),
+        (522,'potti','pileru',23);
+ select* from students;
